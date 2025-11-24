@@ -3,6 +3,7 @@ import sys
 from loguru import logger
 
 from controller import Controller
+from view import View
 
 
 def main():
@@ -15,7 +16,10 @@ def main():
     )
     
     controller = Controller()
-    controller.run()
+    view = View()
+    
+    action = view.start_menu()
+    controller.run(action)
 
 
 if __name__ == '__main__':
