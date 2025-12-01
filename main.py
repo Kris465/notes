@@ -14,10 +14,10 @@ def main():
         retention="3 days",
         format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
     )
-    
+
     controller = Controller()
     view = View()
-    
+
     action = view.start_menu()
     controller.run(action)
 
