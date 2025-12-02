@@ -1,5 +1,3 @@
-import sys
-
 from loguru import logger
 
 from controller import Controller
@@ -18,8 +16,17 @@ def main():
     controller = Controller()
     view = View()
 
-    action = view.start_menu()
-    controller.run(action)
+    while True:
+        action = view.start_menu()
+        if action == 5:
+            print("До свидания!")
+            break
+        elif action in [1, 2, 3, 4]:
+            controller.run(action)
+        else:
+            print("Неверный номер. Пожалуйста, введите число от 1 до 5")
+
+        input("\nНажмите Enter, чтобы продолжить...")
 
 
 if __name__ == '__main__':
